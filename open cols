@@ -1,0 +1,13 @@
+"""Check if site has all data needed to included in runtime calcs
+including floor_area>200, floor_number>0, age>0, heat_pump=FALSE,
+heat_fuel_type=gas, model=ecobee3"""
+
+import csv
+
+with open("C:/Users/Marianne/Dropbox/M/Research/Ecobee DYD/meta_data_v1.csv","r") as meta_data:
+    csvreader = csv.reader(meta_data, delimiter=",")
+    columns=[]
+    for row in csvreader:
+        for (i,v) in enumerate(row):
+            columns[i].append(v)
+print(columns[0])
